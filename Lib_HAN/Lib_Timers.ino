@@ -1,3 +1,8 @@
+/*
+ * Credits to Marnick Hartgers
+ * https://github.com/marnick-hartgers/ESD_HAN/blob/master/Lib_HAN/Lib_Timers.ino
+ */
+
 #define NUM_COUNTERS 10
 
 struct TimerObject{
@@ -28,6 +33,7 @@ void intervalTimer(int timerPointer, int interval){
   }  
 }
 
+
 void maintainTimers(){
   for(int t = 0; t < NUM_COUNTERS;t++){
     if(timers[t].interval != -1 && (timers[t].startTime + timers[t].interval) < millis()){
@@ -36,4 +42,9 @@ void maintainTimers(){
     }
   }
 }
+
+long getTimerInterval(int timerPointer) {
+  return timers[timerPointer].interval;  
+}
+
 
