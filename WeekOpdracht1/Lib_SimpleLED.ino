@@ -25,4 +25,14 @@ void clearAllSimpleLeds() {
     setSimpleLed(i, false);
   }
 }
+void setAllSimpleLeds(boolean on) {
+  for (int i = 0; i < simpleLedLayout.numSimpleLEDs; i++) {
+    setSimpleLed(i, on);
+  }
+}
+void setPatternOnSimpleLeds(boolean pattern[]) {
+  for (int i = 0; i < simpleLedLayout.numSimpleLEDs; i++) {
+    setSimpleLed(i, pattern[i]);
+  }
+}
 

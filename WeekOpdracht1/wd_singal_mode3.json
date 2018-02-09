@@ -1,0 +1,17 @@
+{
+  signal: [
+  	{name: 'LED1', wave: 'lh.......'},
+    {name: 'LED2', wave: 'l.h......'},
+    {name: 'LED3', wave: 'l..h.....'},
+    {name: 'LED4', wave: 'l...h....'},
+    {name: 'LED5', wave: 'l....h...'},
+    {name: 'LED6', wave: 'l.....h..'},
+    {name: 'LED7', wave: 'l......h.'},
+    {name: 'LED8', wave: 'l.......h'},
+],
+    foot:{
+    tick: 0,
+    	text: "Animation frame"
+    	
+    }
+}
