@@ -20,21 +20,30 @@ boolean pattern2[pattern2Length][8] = {
   {false, false, true, false, false, true, false, false },
 };
 
-#define pattern3Length 12
+#define pattern3Length 9
 boolean pattern3[pattern3Length][8] = {
-  {true, false, true, false, false, true, false, true },
   {false, false, false, false, false, false, false, false },
-  {true, false, true, false, false, true, false, true },
-  {false, false, false, false, false, false, false, false },
-  {true, false, true, false, false, true, false, true },
-  {false, false, false, false, false, false, false, false },
+  {true, false, false, false, false, false, false, false },
+  {true, true, false, false, false, false, false, false },
+  {true, true, true, false, false, false, false, false },
+  {true, true, true, true, false, false, false, false },
+  {true, true, true, true, true, false, false, false },
+  {true, true, true, true, true, true, false, false },
+  {true, true, true, true, true, true, true, false },
+  {true, true, true, true, true, true, true, true },
+};
 
-  {false, true, false, true, true, false, true, false },
+#define pattern4Length 9
+boolean pattern4[pattern4Length][8] = {
   {false, false, false, false, false, false, false, false },
-  {false, true, false, true, true, false, true, false },
-  {false, false, false, false, false, false, false, false },
-  {false, true, false, true, true, false, true, false },
-  {false, false, false, false, false, false, false, false }
+  {false, false, false, false, false, false, false, true },
+  {false, false, false, false, false, false, true, true },
+  {false, false, false, false, false, true, true, true },
+  {false, false, false, false, true, true, true, true },
+  {false, false, false, true, true, true, true, true },
+  {false, false, true, true, true, true, true, true },
+  {false, true, true, true, true, true, true, true },
+  {true, true, true, true, true, true, true, true },
 };
 
 int getPattern1(int frame) {
@@ -56,4 +65,11 @@ int getPattern3(int frame) {
 }
 int getPattern3Length() {
   return pattern3Length;
+}
+
+int getPattern4(int frame) {
+  return pattern4[frame];
+}
+int getPattern4Length() {
+  return pattern4Length;
 }

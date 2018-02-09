@@ -1,7 +1,7 @@
-#define speedStep 10
+#define speedStep 100
 
 struct LedConfig {
-  int stepSpeed = 500;
+  int stepSpeed = 100;
   int currentStep = 0;
   int mode = 0;
 };
@@ -11,6 +11,7 @@ LedConfig ledConfig;
 void setup() {
   initSimpleLeds();
   startSerial(onSerialMessage);
+  Serial.println("Hay");
   setTimer(0, 500, setLeds);
 }
 
@@ -30,6 +31,9 @@ void setLeds() {
       break;
     case 2:
       setLedMode2();
+      break;
+    case 3:
+      setLedMode3();
       break;
 
   }
@@ -56,6 +60,14 @@ void setLedMode2() {
     ledConfig.currentStep = 0;
   }
   setPatternOnSimpleLeds(getPattern3(ledConfig.currentStep));
+  ledConfig.currentStep++;
+}
+
+void setLedMode3() {
+  if (ledConfig.currentStep >= getPattern4Length()) {
+    ledConfig.currentStep = 0;
+  }
+  setPatternOnSimpleLeds(getPattern4(ledConfig.currentStep));
   ledConfig.currentStep++;
 }
 
@@ -91,8 +103,11 @@ void onSerialMessage(String data) {
       case 's':
         setMode(1);
         break;
-      case 'p':
+      case 'r':
         setMode(2);
+        break;
+      case 'l':
+        setMode(3);
         break;
       case '-':
         decreaseSpeed();
