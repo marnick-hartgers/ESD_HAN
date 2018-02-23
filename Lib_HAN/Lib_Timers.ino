@@ -1,4 +1,8 @@
-#define NUM_COUNTERS 10
+/*
+ * Credits to Marnick Hartgers
+ * https://github.com/marnick-hartgers/ESD_HAN/blob/master/Lib_HAN/Lib_Timers.ino
+ */
+ #define NUM_COUNTERS 10
 
 struct TimerObject{
   long interval = -1;
