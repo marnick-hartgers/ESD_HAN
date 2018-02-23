@@ -8,7 +8,7 @@ Sleep het bestand in de sketch folder van je arduino project.
 DONE!
 
 ## Timers lib
-###setTimer
+### setTimer
 Definitie:
 ````C
 setTimer(int timerIndex, int interval, void(*callback)(void));
