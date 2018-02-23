@@ -11,7 +11,7 @@ DONE!
 ### setTimer
 Definitie:
 ````C
-setTimer(int timerIndex, int interval, void(*callback)(void));
+setTimer(int timerIndex, int interval, void(*callback)(void))
 ````
 Met deze functie kun je een timer zetten. 
 De timer zou de functie die je mee geeft aan de functie aanroepen iedere ingestelde periode.
@@ -40,3 +40,29 @@ In de Lib_Timers.ino file vind de deze regel
 #define NUM_COUNTERS 10
 ````
 Deze regel defineert 10 timer. Heb je meer dan 10 timers nodig dan moet je deze regel aanpassen naar een hoger getal.
+
+### clearTimer
+Definitie:
+````C
+void clearTimer(int timerIndex)
+````
+Verwijdert een timer.
+Na het aanroepen van deze functie word de timer niet meer uitgevoert en kun je de timer zijn id opnieuw gebruiken.
+Parameters:
+````C
+int timerIndex = de id van de timer
+````
+Voorbeeld:
+````C
+void setup() {
+  setTimer(0,500,timerCallback);//Defineer de timer
+}
+
+void loop() {
+  maintainTimers();//Houd de timers up te date. Deze moet je aanroepen wil je dat de lib werkt.
+}
+
+void timerCallback(){
+    clearTimer(0);//Stopt de timer waardoor deze code maar 1 keer is uitgevoert na 500ms
+}
+````
