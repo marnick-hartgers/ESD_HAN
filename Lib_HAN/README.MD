@@ -1,8 +1,8 @@
 # Librarys documentatie
-## FIRST!
+### FIRST!
 Ben dyslectisch as fuck
 
-## Algemene instalatie van een lib. 
+### Algemene instalatie van een lib. 
 Download de file of clone de repo.
 Sleep het bestand in de sketch folder van je arduino project.
 DONE!
