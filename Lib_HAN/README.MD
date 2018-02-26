@@ -11,14 +11,14 @@ DONE!
 ### setTimer
 Definitie:
 ````C
-setTimer(int timerIndex, int interval, void(*callback)(void))
+setTimer(int timerIndex, long interval, void(*callback)(void))
 ````
 Met deze functie kun je een timer zetten. 
 De timer zou de functie die je mee geeft aan de functie aanroepen iedere ingestelde periode.
 Parameters:
 ````C
 int timerIndex = de id van de timer
-int interval = interval in miliseconde
+long interval = interval in miliseconde
 void(*callback)(void) naam van de functie die uitgevoert moet worden als de timer klaar is
 ```` 
 Voorbeeld:
@@ -65,4 +65,34 @@ void loop() {
 void timerCallback(){
     clearTimer(0);//Stopt de timer waardoor deze code maar 1 keer is uitgevoert na 500ms
 }
+````
+
+###maintainTimers
+Definitie:
+````C
+void maintainTimers()
+````
+Deze functie moet je in je loop aanroepen als je wil dat de timers getriggert worden.
+De functie controleerd van alle timers of ze getriggert moeten worden, als dat het geval is dan voert hij binnen deze functie de callback uit.
+
+Voorbeeld:
+````C
+void loop() {
+  maintainTimers();//Houd de timers up te date
+}
+````
+### getTimerInterval
+Definitie:
+````C
+long getTimerInterval(int timerIndex)
+````
+Retured de interval van de timer
+Parameters:
+````C
+int timerIndex = de id van de timer
+````
+Voorbeeld:
+````C
+setTimer(1,100,doSomething);
+long interval = getTimerInterval(1);// interval will be 100ms in this case
 ````
