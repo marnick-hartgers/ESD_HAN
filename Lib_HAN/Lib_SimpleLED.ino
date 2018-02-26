@@ -1,4 +1,7 @@
-
+/*
+ * Credits to Marnick Hartgers
+ * https://github.com/marnick-hartgers/ESD_HAN/blob/master/Lib_HAN/Lib_SimpleLED.ino
+ */
 struct SimpleLedLayout {
   int numSimpleLEDs;
   int simpleLEDsStartPort;
