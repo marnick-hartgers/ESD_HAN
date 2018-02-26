@@ -86,7 +86,7 @@ Definitie:
 ````C
 long getTimerInterval(int timerIndex)
 ````
-Retured de interval van de timer
+Retured de interval van de timer  
 Parameters:
 ````C
 int timerIndex = de id van de timer
