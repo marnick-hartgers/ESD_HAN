@@ -67,7 +67,7 @@ void timerCallback(){
 }
 ````
 
-###maintainTimers
+### maintainTimers
 Definitie:
 ````C
 void maintainTimers()
