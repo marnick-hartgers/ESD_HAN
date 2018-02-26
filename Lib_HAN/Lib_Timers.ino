@@ -12,23 +12,23 @@ struct TimerObject{
 
 TimerObject timers [NUM_COUNTERS];
 
-void setTimer(int timerPointer, int interval, void (*timerCallback)(void)){
-  timers[timerPointer].interval = interval;
-  timers[timerPointer].callback = timerCallback;
-  timers[timerPointer].startTime = millis();
+void setTimer(int timerIndex, int interval, void (*timerCallback)(void)){
+  timers[timerIndex].interval = interval;
+  timers[timerIndex].callback = timerCallback;
+  timers[timerIndex].startTime = millis();
 }
 
-void clearTimer(int timerPointer){
-  timers[timerPointer].interval = -1;
+void clearTimer(int timerIndex){
+  timers[timerIndex].interval = -1;
 }
 
-void resetTimer(int timerPointer){
-  timers[timerPointer].startTime = millis();
+void resetTimer(int timerIndex){
+  timers[timerIndex].startTime = millis();
 }
 
-void intervalTimer(int timerPointer, int interval){
-  if(timers[timerPointer].callback){
-    timers[timerPointer].interval = interval;
+void intervalTimer(int timerIndex, int interval){
+  if(timers[timerIndex].callback){
+    timers[timerIndex].interval = interval;
   }  
 }
 
@@ -39,5 +39,9 @@ void maintainTimers(){
       timers[t].startTime = millis();
     }
   }
+}
+
+long getTimerInterval(int timerIndex){
+  return timers[timerIndex].interval;
 }
 
